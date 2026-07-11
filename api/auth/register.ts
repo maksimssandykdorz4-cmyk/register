@@ -1,6 +1,6 @@
-import { prisma } from '../../lib/prisma.js'
+import { prisma } from '../../lib/prisma'
 import bcrypt from 'bcrypt'
-import { generateToken } from '../../utils/generateToken.js'
+import { generateToken } from '../../utils/generateToken'
 
 const register = async (req: any, res: any) => {
     const { name, email, password } = req.body;
