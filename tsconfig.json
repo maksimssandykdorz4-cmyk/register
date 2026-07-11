@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "target": "ES2023",
