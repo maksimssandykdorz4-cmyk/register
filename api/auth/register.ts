@@ -3,8 +3,7 @@ import bcrypt from 'bcrypt'
 import { generateToken } from '../../utils/generateToken.js'
 
 const register = async (req: any, res: any) => {
-    const { name, email, password } = req.body;
-
+    
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173'); // или '*' для теста
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -14,6 +13,8 @@ const register = async (req: any, res: any) => {
         res.status(200).end();
         return;
     }
+
+    const { name, email, password } = req.body;
 
     // Check if user exists
     const userExists = await prisma.user.findUnique({
